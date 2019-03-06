@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFUncommonControls", "WPFUncommonControls\WPFUncommonControls.csproj", "{B2DDC86B-CF39-4CB8-80B8-9F36FF39715B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FSMExample", "FSMExample\FSMExample.csproj", "{56168A96-3476-4206-B006-0B8B12FA879F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B2DDC86B-CF39-4CB8-80B8-9F36FF39715B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2DDC86B-CF39-4CB8-80B8-9F36FF39715B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2DDC86B-CF39-4CB8-80B8-9F36FF39715B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56168A96-3476-4206-B006-0B8B12FA879F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56168A96-3476-4206-B006-0B8B12FA879F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56168A96-3476-4206-B006-0B8B12FA879F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56168A96-3476-4206-B006-0B8B12FA879F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
