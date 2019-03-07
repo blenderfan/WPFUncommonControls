@@ -48,10 +48,18 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="CellGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FSMGraph.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="CellGrid.xaml.cs">
+      <DependentUpon>CellGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CellGridStyle.cs" />
     <Compile Include="FSM.cs" />
     <Compile Include="FSMGraph.xaml.cs">
       <DependentUpon>FSMGraph.xaml</DependentUpon>

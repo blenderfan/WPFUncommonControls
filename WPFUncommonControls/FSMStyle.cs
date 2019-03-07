@@ -12,7 +12,7 @@ namespace WPFUncommonControls
 {
     public class FSMStyle : INotifyPropertyChanged
     {
-
+        private bool displayText;
         private double nodeSize;
         private double connectionThickness;
         private double borderThickness;
@@ -26,6 +26,19 @@ namespace WPFUncommonControls
         private Brush connectionOutline;
 
         private Thickness margin;
+
+        public bool DisplayText
+        {
+            get { return displayText; }
+            set
+            {
+                if(value != displayText)
+                {
+                    displayText = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
 
         public Thickness Margin
         {
@@ -183,6 +196,7 @@ namespace WPFUncommonControls
             selectedBorder = new SolidColorBrush(Colors.Red);
             connectionOutline = new SolidColorBrush(Colors.Black);
             margin = new Thickness(50, 50, 50, 50);
+            displayText = false;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
