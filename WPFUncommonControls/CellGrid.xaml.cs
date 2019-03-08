@@ -66,6 +66,25 @@ namespace WPFUncommonControls
                 double cellHeight = Math.Abs(height / cellsY);
                 double cellWidth = Math.Abs(width / cellsX);
 
+                double additionalMarginLeft = 0.0f;
+                double additionalMarginTop = 0.0f;
+
+                if(CellGridStyle.ForceSquare)
+                {
+                    if (cellHeight < cellWidth)
+                    {
+                        cellWidth = cellHeight;
+                        additionalMarginLeft = (width - cellWidth * cellsX)/2.0f;
+                    }
+                    else
+                    {
+                        cellHeight = cellWidth;
+                        additionalMarginTop = (height - cellHeight * cellsY)/2.0f;
+                    }
+                }
+                double marginLeft = style.Margin.Left + additionalMarginLeft;
+                double marginTop = style.Margin.Top + additionalMarginTop;
+
                 for (int i = 0; i < cellsY; i++)
                     for (int j = 0; j < cellsX; j++)
                     {
@@ -79,7 +98,7 @@ namespace WPFUncommonControls
                             Fill = color,
                             Width = cellWidth,
                             Height = cellHeight,
-                            Margin = new Thickness(style.Margin.Left + j * cellWidth, style.Margin.Top + i * cellHeight, 0, 0)
+                            Margin = new Thickness(marginLeft + j * cellWidth, marginTop + i * cellHeight, 0, 0)
                         };
 
                         Elements.Add(rect);
@@ -89,9 +108,9 @@ namespace WPFUncommonControls
                 {
                     for (int i = 0; i < cellsY+1; i++)
                     {
-                        double x1 = style.Margin.Left;
-                        double x2 = x1 + width;
-                        double y1 = style.Margin.Top + i * cellHeight;
+                        double x1 = marginLeft;
+                        double x2 = x1 + cellsX * cellWidth;
+                        double y1 = marginTop + i * cellHeight;
                         double y2 = y1;
 
                         Line line = new Line()
@@ -109,10 +128,10 @@ namespace WPFUncommonControls
 
                     for (int i = 0; i < cellsX+1; i++)
                     {
-                        double x1 = style.Margin.Left + i * cellWidth;
+                        double x1 = marginLeft + i * cellWidth;
                         double x2 = x1;
-                        double y1 = style.Margin.Top;
-                        double y2 = y1 + height;
+                        double y1 = marginTop;
+                        double y2 = y1 + cellsY * cellHeight;
 
                         Line line = new Line()
                         {

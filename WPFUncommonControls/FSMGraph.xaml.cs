@@ -167,6 +167,7 @@ namespace WPFUncommonControls
                             innerCircle.Stroke = FSMStyle.SelectedBorder;
                             innerCircle.Fill = FSMStyle.SelectedFill;
                         }
+                        stateLabel.Foreground = FSMStyle.SelectedBorder;
                     }
 
                     Elements.Add(circle);
@@ -273,17 +274,17 @@ namespace WPFUncommonControls
                             StrokeThickness = FSMStyle.ConnectionThickness
                         };
                         StringBuilder pathData = new StringBuilder("M ");
-                        pathData.Append((int)firstPoint.X + FSMStyle.NodeSize / 2.0f);
+                        pathData.Append((int)(firstPoint.X + FSMStyle.NodeSize / 2.0f));
                         pathData.Append(",");
                         pathData.Append((int)firstPoint.Y);
                         pathData.Append(" A ");
-                        pathData.Append(FSMStyle.NodeSize / 2.0f);
+                        pathData.Append((int)(FSMStyle.NodeSize / 2.0f));
                         pathData.Append(",");
-                        pathData.Append(FSMStyle.NodeSize / 2.0f);
+                        pathData.Append((int)(FSMStyle.NodeSize / 2.0f));
                         pathData.Append(" 0 1 0 ");
                         pathData.Append((int)firstPoint.X);
                         pathData.Append(",");
-                        pathData.Append((int)firstPoint.Y - FSMStyle.NodeSize / 2.0f);
+                        pathData.Append((int)(firstPoint.Y - FSMStyle.NodeSize / 2.0f));
                         pathData.Append(" z");
                         connection.Data = Geometry.Parse(pathData.ToString());
 

@@ -22,10 +22,12 @@ namespace WPFUncommonControls
             gridColor = new SolidColorBrush(Colors.Black);
             cellColors = new Dictionary<int, Brush>();
             margin = new Thickness(30, 30, 30, 30);
+            forceSquare = false;
         }
 
         private double gridThickness;
         private bool displayGrid;
+        private bool forceSquare;
 
         private Brush backgroundColor;
         private Brush cellBackgroundColor;
@@ -54,6 +56,19 @@ namespace WPFUncommonControls
                 if(value != displayGrid)
                 {
                     displayGrid = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        public bool ForceSquare
+        {
+            get { return forceSquare; }
+            set
+            {
+                if(value != forceSquare)
+                {
+                    forceSquare = value;
                     NotifyPropertyChanged();
                 }
             }
